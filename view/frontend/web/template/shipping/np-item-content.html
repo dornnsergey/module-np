@@ -1,0 +1,52 @@
+<div class="np-checkout-container" data-bind="afterRender: setValidationToForm">
+
+    <div class="field required">
+        <div class="control">
+            <select class="select"
+                    name="np-method"
+                    data-bind="options: availableMethods(),
+                               value: selectedMethod"
+            ></select>
+        </div>
+    </div>
+
+    <div class="field required">
+        <div class="control">
+            <input class="input-text np-settlement"
+                   type="text"
+                   name="np-settlement"
+                   data-bind="afterRender: setSearchSettlement"
+                   placeholder="Введіть населений пункт"
+                   data-validate="{'required-entry': true}"
+            />
+        </div>
+    </div>
+    <div id="resultSettlement"></div>
+
+    <div class="field required"
+         if="(selectedMethod() === whMethodName) && isSettlementSelected">
+        <div class="control">
+            <input class="input-text np-warehouse"
+                   type="text"
+                   name="np-warehouse"
+                   data-bind="afterRender: setSearchWh"
+                   placeholder="Введіть номер або адрес почтового відділення"
+                   data-validate="{'required-entry': true}"
+            />
+            <div id="resultWh"></div>
+        </div>
+    </div>
+
+    <div class="field required"
+         if="(selectedMethod() === addressMethodName) && isSettlementSelected">
+        <div class="control">
+            <input class="input-text np-address"
+                   type="text"
+                   name="np-address"
+                   placeholder="Введіть адресу доставки"
+                   data-validate="{'required-entry': true}"
+            />
+        </div>
+    </div>
+</div>
+

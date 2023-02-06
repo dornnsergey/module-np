@@ -1,0 +1,49 @@
+& when (@media-common = true) {
+    .np-checkout-container {
+        padding: 10px;
+
+        & .field {
+            margin-bottom: 20px;
+        }
+
+        & input::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        & .ui-menu {
+            margin-top: 4px;
+            list-style-type: none;
+            border: 1px solid #ccc;
+            padding-inline-start: 0;
+            background-color: #fff;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        & .ui-widget-content {
+
+        }
+
+        & .ui-menu-item {
+            margin: 0;
+            padding: 8px 20px;
+            transition-delay: 80ms;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #e5e5e8;
+            }
+        }
+    }
+
+    .ui-helper-hidden-accessible {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+}
